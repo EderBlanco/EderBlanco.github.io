@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 4 | Procesamiento Paralelo</title>
+    <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/unidades.css">
+</head>
+<body>
+    <!-- Header - Menu -->
+    <header>
+
+        <div class="header-content">
+
+            <div class="logo">
+                <h1>Instituto Tecnológico de Saltillo</h1>
+            </div>
+
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li class="menu-selected"><a href="#" class="text-menu-selected">Inicio</a></li>
+                        <li><a href=blog.html>Atras</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- Portada -->  
+        <div class="unidad-container-cover">
+            <div class="container-info-cover">
+                <h1>Unidad 4 <br> Procesamiento Paralelo</h1>
+            </div>
+        </div>
+
+    <!-- Contenido -->  
+    <div class="container-content">
+        <article>
+            <h2>Temario.</h2>
+            <p>
+                4.1 Aspectos Básicos de la computación paralela. <br><br>
+
+                4.2 Tipos de computación paralela.<br>
+                4.2.1 Clasificación.<br>
+                4.2.2 Arquitectura de computadores secuenciales.<br>
+                4.2.3 Organización de direcciones de memoria.<br><br>
+
+                4.3 Sistemas de memoria (compartida).<br>
+                Multiprocesadores.<br>
+                4.3.1 Redes de interconexión dinámica (indirecta).<br>
+                Medio compartido.<br>
+                Conmutadas.<br><br>
+
+                4.4 Sistemas de memoria distribuida. Multicomputadores.<br>
+                4.4.1 Redes de interconexión estáticas.<br><br>
+
+                4.5 Casos para estudio.<br><br>
+            </p>
+            <h2>4.1 Aspectos básicos de la computación paralela.</h2>
+            <p>
+                La computación paralela es una forma de cómputo en la que muchas instrucciones se ejecutan 
+                simultáneamente,  operando sobre el principio de que problemas grandes, a menudo se pueden 
+                dividir en unos más pequeños, que luego son resueltos simultáneamente (en paralelo). Hay varias 
+                formas diferentes de computación paralela.<br><br>
+
+                Las computadoras paralelas pueden clasificarse según el nivel de paralelismo que admite su hardware: 
+                equipos con procesadores multinúcleo y multi-procesador que tienen múltiples elementos de procesamiento 
+                dentro de una sola máquina y los clústeres, MPPS y grids que utilizan varios equipos para trabajar 
+                en la misma tarea. Muchas veces, para acelerar las tareas específicas, se utilizan arquitecturas 
+                especializadas de computación en paralelo junto a procesadores tradicionales.<br><br>
+            </p>
+            <img src="img/paralelo.jpg" alt=""><br><br><br>
+            <p>
+                Caracteristicas:<br><br>
+
+                -Lenguajes para computadores paralelos, flexibles para permitir una implementación eficiente y que sean fáciles de programar.<br>
+                -Herramientas para la programación paralela.<br>
+                -Programas paralelos portables.<br>
+                -Compiladores paralizantes.<br>
+                -Diseño de computadores paralelo: Escalabilidad y Comunicaciones.<br>
+                -Diseño de algoritmos eficientes: No hay ganancia si los algoritmos no se diseñan adecuadamente.<br>
+                -Métodos para evaluar los algoritmos paralelos: 
+                ¿Cómo de rápido se puede resolver un problema usando una máquina paralela? 
+                ¿Con qué eficiencia se usan esos procesadores?<br><br>
+            </p>
+
+            <h2>4.2 Tipos de computación paralela.</h2>
+            <p>
+                Paralelismo a nivel de bit<br>
+                Desde el advenimiento de la integración a gran escala (VLSI) como tecnología de fabricación de chips 
+                de computadora en la década de 1970 hasta alrededor de 1986, la aceleración en la arquitectura de 
+                computadores se lograba en gran medida duplicando el tamaño de la palabra en la computadora, 
+                la cantidad de información que el procesador puede manejar por ciclo.<br><br>
+
+                Paralelismo a nivel de instrucion<br>
+                Un programa de ordenador es, en esencia, una secuencia de instrucciones ejecutadas por un 
+                procesador. Estas instrucciones pueden reordenarse y combinarse en grupos que luego son 
+                ejecutadas en paralelo sin cambiar el resultado del programa. Esto se conoce como paralelismo 
+                a nivel de instrucción.<br><br>
+
+                Paralelismo de datos<br>
+                El paralelismo de datos es el paralelismo inherente en programas con ciclos, que se centra en 
+                la distribución de los datos entre los diferentes nodos computacionales que deben tratarse en paralelo. 
+                La paralelización de ciclos conduce a menudo a secuencias similares de operaciones (no necesariamente 
+                idénticas) o funciones que se realizan en los elementos de una gran estructura de datos. 
+                Muchas de las aplicaciones científicas y de ingeniería muestran paralelismo de datos.<br><br>
+
+                Paralelismo de tareas<br>
+                El paralelismo de tareas es la característica de un programa paralelo en la que cálculos 
+                completamente diferentes se pueden realizar en cualquier conjunto igual o diferente de datos. 
+                Esto contrasta con el paralelismo de datos, donde se realiza el mismo cálculo en distintos o mismos 
+                grupos de datos. El paralelismo de tareas por lo general no escala con el tamaño de un problema.<br><br>
+            </p>
+            <img src="img/paralela.jpg" alt=""><br><br><br>
+
+            <h2>4.2.1 Clasificación.</h2>
+            <p>
+                Las computadoras paralelas pueden clasificarse según el nivel de paralelismo que admite su hardware: 
+                equipos con procesadores multinúcleoy multi-procesador que tienen múltiples elementos de procesamiento 
+                dentro de una sola máquina y los clústeres, MPPS y grids que utilizan varios equipos para trabajar 
+                en la misma tarea. Muchas veces, para acelerar tareas específicas, se utilizan arquitecturas 
+                especializadas de computación en paralelo junto a procesadores tradicionales.<br><br>
+            </p>
+
+            <h2>4.2.2 Arquitectura de computadores secuenciales.</h2>
+            <p>
+                Dentro de esta clasificación, se encuentra a las computadoras SISD (Single-Instruction Stream, 
+                Single-Data, Stream/ Flujo único de instrucciones, flujo único de datos) <br>
+                Las computadoras secuenciales se basan en el modelo introducido por John Von Neumann la cual consiste en: <br><br>
+
+                Una Unidad Central de Procesamiento (CPU).<br>
+                Memoria Principal para almacenar información.<br>
+                Bus donde fluyan los datos.<br>
+                Mecanismo de sincronización.<br><br>
+            </p>
+            <img src="img/aqui secuencial.JPG" alt=""><br><br><br>
+
+            <h2>4.2.3 Organización de direcciones de memoria.</h2>
+            <p>
+                Una memoria principal se compone de un conjunto de celdas básicas dotadas de una determinada organización. 
+                Cada celda soporta un bit de información. Los bits se agrupan en unidades direccionables denominadas palabras. 
+                La longitud de palabra la determina el número de bits que la componen y constituye la resolución de la memoria 
+                (mínima cantidad de información direccionable). La longitud de palabra suele oscilar desde 8 bits (byte) 
+                hasta 64 bits.<br><br>
+
+                Cada celda básica es un dispositivo físico con dos estados estables (o semi-estables) con capacidad para 
+                cambiar el estado (escritura) y determinar su valor (lectura). Aunque en los primeros computadores se 
+                utilizaron los materiales magnéticos como soporte de las celdas de memoria principal (memorias de ferritas, 
+                de película delgada, etc.) en la actualidad sólo se utilizan los materiales semiconductores.<br><br>
+
+                Dentro de las memorias electrónicas de semiconductor podemos distinguir dos grandes grupos: las estáticas 
+                (SRAM: Static Random Access Memory) y las dinámicas (DRAM: Dynamic Random Access Memory).<br><br>
+
+                Las celdas de memoria se disponen en el interior de un chip atendiendo a dos organizaciones principales: 
+                la organización por palabras, también denominada 2D, y la organización por bits, también denominada 2 ½ D o 3D.<br><br>
+            </p>
+
+            <h2>4.3 Sistemas de memoria (compartida).</h2>
+            <p>
+                Un multiprocesador puede verse como un computador paralelo compuesto por varios procesadores interconectados 
+                que comparten un mismo sistema de memoria.<br><br>
+
+                Los sistemas multiprocesadores son arquitecturas MIMD con memoria compartida. Tienen un único espacio de 
+                direcciones para todos los procesadores y los mecanismos de comunicación se basan en el paso de mensajes 
+                desde el punto de vista del programador.<br><br>
+
+                Dado que los multiprocesadores comparten diferentes módulos de memoria, pudiendo acceder a un mismo módulo 
+                varios procesadores, a los multiprocesadores también se les llama sistemas de memoria compartida.<br><br>
+            </p>
+            <img src="img/memoria compartida.jpg" alt=""><br><br><br>
+
+            <p>
+                Multiproceso es tradicionalmente conocido como el uso de múltiples procesos concurrentes en un 
+                sistema en lugar de un único proceso en un instante determinado. Como la multitarea que permite a 
+                múltiples procesos compartir una única CPU, múltiples CPUs pueden ser utilizados para ejecutar múltiples 
+                hilos dentro de un único proceso.<br><br>
+            </p>
+
+                <h3>Multiprocesadores.</h3>
+                <p>
+                El multiproceso para tareas generales es, a menudo, bastante difícil de conseguir debido a que puede 
+                haber varios programas manejando datos internos (conocido como estado o contexto) a la vez.<br><br>
+
+                Los programas típicamente se escriben asumiendo que sus datos son incorruptibles. Sin embargo, 
+                si otra copia del programa se ejecuta en otro procesador, las dos copias pueden interferir entre 
+                sí intentando ambas leer o escribir su estado al mismo tiempo. Para evitar este problema se usa 
+                una variedad de técnicas de programación incluyendo semáforos y otras comprobaciones y bloqueos 
+                que permiten a una sola copia del programa cambiar de forma exclusiva ciertos valores.<br><br>
+            </p>
+
+            <h2>4.3.1 Redes de interconexión dinámica (indirecta).</h2>
+            <p>
+                Uno de los criterios más importantes para la clasificación de las redes es el que tiene en cuenta la 
+                situación de la red en la máquina paralela, dando lugar a dos familias de redes: redes estáticas y redes 
+                dinámicas. Una red estática es una red cuya topología queda definida de manera definitiva y estable 
+                durante la construcción de la máquina paralela.<br><br>
+
+                La red simplemente une los diversos elementos de acuerdo con una configuración dada. Se utiliza sobre 
+                todo en el caso de los multicomputadores para conectar los diversos procesadores que posee la máquina. 
+                Por la red sólo circulan los mensajes entre procesadores, por lo que se dice que la red presenta un 
+                acoplamiento débil. En general, en las redes estáticas se exige poca carga a la red.<br><br>
+
+                Una red dinámica es una red cuya topología puede variar durante el curso de la ejecución de un programa 
+                paralelo o entre dos ejecuciones de programas. La red está constituida por elementos materiales 
+                específicos, llamados commutadores o switches.<br><br>        
+            </p>
+            <img src="img/indirecta.jpg" alt=""><br><br><br>
+
+            <h2>4.4.1 Redes de interconexión estáticas.</h2>
+            <p>
+                Las redes estáticas emplean enlaces directos fijos entre los nodos. Estos enlaces, una vez fabricado 
+                el sistema son difíciles de cambiar, por lo que la escalabilidad de estas topologías es baja. 
+                Las redes estáticas pueden utilizarse con eficiencia en los sistemas en que pueden predecirse el 
+                tipo de tráfico de comunicaciones entre sus procesadores.<br><br>
+
+                Clases de redes de interconexión:<br><br>
+
+                Formación lineal: Se trata de una red unidimensional en que los nodos se conectan cada uno con el 
+                siguiente medianteN-1 enlaces formando una línea.<br>
+                Mallas y toros: Esta red de interconexión es muy utilizada en la práctica. Las redes en toro son 
+                mallas en que sus filas y columnas tienen conexiones en anillo, esto contribuye a disminuir su diámetro. 
+                Esta pequeña modificación permite convertir a las mallas en estructuras simétricas y además reduce su 
+                diámetro a la mitad.<br><br>        
+            </p>
+            <img src="img/estatica.jpg" alt=""><br><br><br>
+
+            <h2>4.5 Casos para estudio.</h2>
+            <p>
+                Por numerosos motivos, el procesamiento distribuido se ha convertido en un área de gran importancia e 
+                interés dentro de la Ciencia de la Computación, produciendo profundas transformaciones en las líneas 
+                de I/D.<br><br>
+
+                Interesa realizar investigación en la especificación, transformación, optimización y evaluación de 
+                algoritmos distribuidos y paralelos. Esto incluye el diseño y desarrollo de sistemas paralelos, la 
+                transformación de algoritmos secuenciales en paralelos, y las métricas de evaluación de performance 
+                sobre distintas plataformas de soporte (hardware y software). Más allá de las mejoras constantes en 
+                las arquitecturas físicas de soporte, uno de los mayores desafíos se centra en cómo aprovechar al 
+                máximo la potencia de estas.<br><br>
+
+                Interesa realizar investigación en la especificación, transformación, optimización y evaluación 
+                de algoritmos distribuidos y paralelos. Esto incluye el diseño y desarrollo de sistemas paralelos, 
+                la transformación de algoritmos secuenciales en paralelos, y las métricas de evaluación de performance 
+                sobre distintas plataformas de soporte (hardware y software). Más allá de las mejoras constantes en las 
+                arquitecturas físicas de soporte, uno de los mayores desafíos se centra en cómo aprovechar al máximo la 
+                potencia de estas.<br><br>
+
+                Pasos De Investigación Y Desarrollo:<br><br>
+
+                Paralelización de algoritmos secuenciales. Diseño y optimización de algoritmos.<br>
+                Modelos de representación y predicción de performance de algoritmos paralelos.<br>
+                Mapping y scheduling de aplicaciones paralelas sobre distintas arquitecturas multiprocesador.<br>
+                Métricas del paralelismo. Speedup, eficiencia, rendimiento, granularidad, superlinealidad.<br>
+                Balance de carga estático y dinámico. Técnicas de balanceo de carga.<br>
+                Análisis de los problemas de migración y asignación óptima de procesos y datos a procesadores.<br>
+                Escalabilidad de algoritmos paralelos en arquitecturas multiprocesador distribuidas.<br>
+                Implementación de soluciones sobre diferentes modelos de arquitectura homogéneas y heterogéneas 
+                (multicores, clusters, multiclusters y grid). Ajuste del modelo de software al modelo de hardware, 
+                a fin de optimizar el sistema paralelo.<br>
+                Evaluación de performance.<br>
+                Laboratorios remotos para el acceso transparente a recursos de cómputo paralelo.<br>
+            </p>
+        </article>
+    </div>
+</body>
+</html>
